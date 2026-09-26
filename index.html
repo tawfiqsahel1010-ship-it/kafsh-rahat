@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
+
+    <meta
+        name="description"
+        content="سیستم حسابداری آفلاین کفش راحت"
+    >
+
+    <title>کفش راحت | حسابداری</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="shoe-logo">
+                👟
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    کفش راحت
+                </h1>
+
+                <p>
+                    سیستم حسابداری دوکان
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="today-box">
+
+            <span>
+                امروز
+            </span>
+
+            <strong id="todayDate">
+                ---
+            </strong>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- تاریخ -->
+
+        <section class="card date-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        تاریخ حساب
+                    </span>
+
+                    <h2 id="selectedDate">
+                        ---
+                    </h2>
+
+                </div>
+
+                <button
+                    id="todayBtn"
+                    class="small-btn"
+                >
+                    امروز
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= موجودی ================= -->
+
+        <section class="balance-card">
+
+            <div class="balance-top">
+
+                <div>
+
+                    <span>
+                        موجودی ابتدای روز
+                    </span>
+
+                    <strong id="openingBalance">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+
+                <div class="balance-arrow">
+                    →
+                </div>
+
+
+                <div class="closing-box">
+
+                    <span>
+                        موجودی پایان روز
+                    </span>
+
+                    <strong id="closingBalance">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="balance-line"></div>
+
+            <div class="formula">
+
+                <span>
+                    موجودی شروع
+                </span>
+
+                <b>
+                    +
+                </b>
+
+                <span>
+                    فروش
+                </span>
+
+                <b>
+                    −
+                </b>
+
+                <span>
+                    مصرف
+                </span>
+
+                <b>
+                    −
+                </b>
+
+                <span>
+                    برداشت
+                </span>
+
+                <b>
+                    =
+                </b>
+
+                <strong>
+                    موجودی پایان
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= خلاصه ================= -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-box sales-box">
+
+                <div class="summary-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <span>
+                        فروش
+                    </span>
+
+                    <strong id="salesTotal">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-box expense-box">
+
+                <div class="summary-icon">
+                    🧾
+                </div>
+
+                <div>
+
+                    <span>
+                        مصرف
+                    </span>
+
+                    <strong id="expensesTotal">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-box withdrawal-box">
+
+                <div class="summary-icon">
+                    💸
+                </div>
+
+                <div>
+
+                    <span>
+                        برداشت
+                    </span>
+
+                    <strong id="withdrawalsTotal">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-box net-box">
+
+                <div class="summary-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <span>
+                        تغییر خالص
+                    </span>
+
+                    <strong id="netChange">
+                        0
+                    </strong>
+
+                    <small>
+                        افغانی
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= عملیات ================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        عملیات روزانه
+                    </span>
+
+                    <h2>
+                        ثبت حساب
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="actions">
+
+
+                <button
+                    id="addSaleBtn"
+                    class="action-btn sale-btn"
+                >
+
+                    <span class="action-icon">
+                        💰
+                    </span>
+
+                    <span>
+                        ثبت فروش
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    id="addExpenseBtn"
+                    class="action-btn expense-btn"
+                >
+
+                    <span class="action-icon">
+                        🧾
+                    </span>
+
+                    <span>
+                        ثبت مصرف
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    id="addWithdrawalBtn"
+                    class="action-btn withdrawal-btn"
+                >
+
+                    <span class="action-icon">
+                        💸
+                    </span>
+
+                    <span>
+                        ثبت برداشت
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= موجودی شروع ================= -->
+
+        <section class="card opening-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        تنظیم حساب
+                    </span>
+
+                    <h2>
+                        موجودی ابتدای روز
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <p class="hint">
+                اگر لازم است موجودی شروع روز را تغییر دهید، مبلغ را وارد کنید.
+            </p>
+
+
+            <div class="input-row">
+
+                <input
+                    id="openingInput"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    placeholder="مثلاً 5000"
+                >
+
+                <button
+                    id="saveOpeningBtn"
+                    class="primary-btn"
+                >
+                    ذخیره
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= تراکنش‌ها ================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        جزئیات حساب
+                    </span>
+
+                    <h2>
+                        تراکنش‌های امروز
+                    </h2>
+
+                </div>
+
+                <span
+                    id="transactionCount"
+                    class="count-badge"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="transactionsList"
+                class="transactions-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📋
+                    </div>
+
+                    <strong>
+                        هنوز تراکنشی ثبت نشده
+                    </strong>
+
+                    <p>
+                        فروش، مصرف یا برداشت را ثبت کنید.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= روزهای گذشته ================= -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        سوابق
+                    </span>
+
+                    <h2>
+                        روزهای گذشته
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="daysList"
+                class="days-list"
+            >
+
+                <div class="empty-state small-empty">
+
+                    <div class="empty-icon">
+                        📅
+                    </div>
+
+                    <p>
+                        هنوز سابقه‌ای وجود ندارد.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= گزارش ================= -->
+
+        <section class="card report-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        گزارش حساب
+                    </span>
+
+                    <h2>
+                        📊 گزارش روزانه
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <p class="report-hint">
+
+                گزارش روز انتخاب‌شده را به شکل PDF یا تصویر ذخیره کنید.
+
+            </p>
+
+
+            <div class="report-buttons">
+
+                <button
+                    id="pdfBtn"
+                    class="report-btn pdf-btn"
+                >
+                    📄 ساخت PDF
+                </button>
+
+
+                <button
+                    id="imageBtn"
+                    class="report-btn image-btn"
+                >
+                    🖼️ ذخیره تصویر
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= پشتیبان ================= -->
+
+        <section class="card backup-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="mini-label">
+                        مدیریت اطلاعات
+                    </span>
+
+                    <h2>
+                        💾 پشتیبان‌گیری
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <p class="hint">
+
+                برای جلوگیری از از دست رفتن اطلاعات، از حساب خود پشتیبان بگیرید.
+
+            </p>
+
+
+            <div class="backup-buttons">
+
+                <button
+                    id="exportBtn"
+                    class="backup-btn"
+                >
+                    📥 دریافت پشتیبان
+                </button>
+
+
+                <button
+                    id="importBtn"
+                    class="backup-btn"
+                >
+                    📤 بازیابی پشتیبان
+                </button>
+
+                <button
+                    id="clearBtn"
+                    class="backup-btn danger-btn"
+                >
+                    🗑️ حذف همه اطلاعات
+                </button>
+
+            </div>
+
+
+            <input
+                id="importFile"
+                type="file"
+                accept=".json,application/json"
+                hidden
+            >
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div
+        id="modal"
+        class="modal"
+    >
+
+        <div class="modal-box">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span
+                        id="modalIcon"
+                        class="modal-icon"
+                    >
+                        💰
+                    </span>
+
+                    <h2 id="modalTitle">
+                        ثبت فروش
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="closeModalBtn"
+                    class="close-modal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <label>
+                    مبلغ
+                </label>
+
+                <div class="amount-input">
+
+                    <input
+                        id="amountInput"
+                        type="number"
+                        inputmode="decimal"
+                        min="0"
+                        placeholder="مثلاً 1500"
+                    >
+
+                    <span>
+                        افغانی
+                    </span>
+
+                </div>
+
+
+                <label>
+                    توضیحات
+                </label>
+
+                <textarea
+                    id="descriptionInput"
+                    rows="3"
+                    placeholder="مثلاً فروش یک جوره کفش"
+                ></textarea>
+
+
+                <button
+                    id="saveTransactionBtn"
+                    class="modal-save-btn"
+                >
+                    ذخیره تراکنش
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            👟
+        </div>
+
+        <strong>
+            کفش راحت
+        </strong>
+
+        <span>
+            سیستم حسابداری آفلاین
+        </span>
+
+        <small>
+            اطلاعات شما روی همین دستگاه ذخیره می‌شود.
+        </small>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
